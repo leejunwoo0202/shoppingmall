@@ -1,4 +1,4 @@
-package junwoo.shoppingmall.entity;
+package junwoo.shoppingmall.dto.entity;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

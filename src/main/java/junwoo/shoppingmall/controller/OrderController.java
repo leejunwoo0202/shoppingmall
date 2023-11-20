@@ -1,7 +1,7 @@
 package junwoo.shoppingmall.controller;
 
-import junwoo.shoppingmall.entity.Member;
-import junwoo.shoppingmall.entity.Product;
+import junwoo.shoppingmall.dto.entity.Member;
+import junwoo.shoppingmall.dto.entity.Product;
 import junwoo.shoppingmall.service.MemberService;
 import junwoo.shoppingmall.service.ProductService;
 import lombok.RequiredArgsConstructor;

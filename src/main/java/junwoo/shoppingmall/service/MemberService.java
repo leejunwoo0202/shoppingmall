@@ -1,7 +1,6 @@
 package junwoo.shoppingmall.service;
 
-import junwoo.shoppingmall.dto.MemberDTO;
-import junwoo.shoppingmall.entity.Member;
+import junwoo.shoppingmall.dto.entity.Member;
 import junwoo.shoppingmall.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

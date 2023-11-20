@@ -1,8 +1,7 @@
-package junwoo.shoppingmall.entity;
+package junwoo.shoppingmall.dto.entity;
 
 import jakarta.persistence.*;
 import junwoo.shoppingmall.dto.MemberDTO;
-import junwoo.shoppingmall.dto.ProductDTO;
 import lombok.*;
 
 @Entity

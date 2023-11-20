@@ -1,7 +1,7 @@
 package junwoo.shoppingmall.controller;
 
-import junwoo.shoppingmall.entity.Address;
-import junwoo.shoppingmall.entity.Member;
+import junwoo.shoppingmall.dto.entity.Address;
+import junwoo.shoppingmall.dto.entity.Member;
 import junwoo.shoppingmall.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

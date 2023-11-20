@@ -1,9 +1,6 @@
 package junwoo.shoppingmall.repository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.transaction.Transactional;
-import junwoo.shoppingmall.entity.Member;
-import lombok.RequiredArgsConstructor;
+import junwoo.shoppingmall.dto.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,5 +1,10 @@
 package junwoo.shoppingmall.dto;
 
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import junwoo.shoppingmall.dto.entity.Product;
+import junwoo.shoppingmall.dto.entity.ProductImage;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,33 +21,20 @@ public class ProductImageDTO {
 
     private String uuid;
 
-    private String imgName;
+    private String originalFileName;
 
-    private String path;
+    private String storedFileName;
 
-    public String getImageURL()
-    {
-        try
-        {
-            return URLEncoder.encode(path+"/"+uuid+"_"+imgName,"UTF-8");
-        }
-        catch(UnsupportedEncodingException e)
-        {
-            e.printStackTrace();
-        }
-        return "";
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id")
+    private Product product;
+
+    public static ProductImage toBoardFileEntity(Product productEntity, String originalFileName, String storedFileName) {
+        ProductImage productImage = new ProductImage();
+        productImage.setOriginalFileName(originalFileName);
+        productImage.setStoredFileName(storedFileName);
+        productImage.setProduct(productEntity);
+        return productImage;
     }
 
-    public String getThumbnailURL()
-    {
-        try
-        {
-            return URLEncoder.encode(path+"/s_"+uuid+"_"+imgName,"UTF-8");
-        }
-        catch (UnsupportedEncodingException e)
-        {
-            e.printStackTrace();
-        }
-        return "";
-    }
 }

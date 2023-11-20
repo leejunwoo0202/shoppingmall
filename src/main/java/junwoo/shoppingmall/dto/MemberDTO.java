@@ -4,7 +4,7 @@ import jakarta.persistence.Embedded;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import junwoo.shoppingmall.entity.Address;
+import junwoo.shoppingmall.dto.entity.Address;
 import lombok.*;
 
 @RequiredArgsConstructor
