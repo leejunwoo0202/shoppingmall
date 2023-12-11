@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="saveReq()">글작성</button>
+
+<table>
+    <tr>
+        <th>이름</th>
+        <th>가격</th>
+        <th>수량</th>
+        <th>사진</th>
+    </tr>
+    <tr th:each="product: ${productList}">
+
+
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.stockQuantity}"></td>
+        <td th:if="${product.fileAttached == 1}">
+            <img th:src="@{|/upload/${product.storedFileName}|}" alt=""></td>
+
+
+
+    </tr>
+</table>
+
+
+<a th:href="@{/product/paging(page=1)}">First</a>
+
+<a th:href="${productList.first} ? '#' : @{/product/paging(page=${productList.number})}">prev</a>
+
+
+<span th:each="page: ${#numbers.sequence(startPage, endPage)}">
+
+    <span th:if="${page == productList.number + 1}" th:text="${page}"></span>
+
+    <span th:unless="${page == productList.number + 1}">
+        <a th:href="@{/product/paging(page=${page})}" th:text="${page}"></a>
+    </span>
+</span>
+
+
+<a th:href="${productList.last} ? '#' : @{/product/paging(page=${productList.number + 2})}">next</a>
+
+<a th:href="@{/product/paging(page=${productList.totalPages})}">Last</a>
+
+
+</body>
+<script>
+    const saveReq = () => {
+        location.href = "/products/new";
+    }
+
+</script>
+</html>

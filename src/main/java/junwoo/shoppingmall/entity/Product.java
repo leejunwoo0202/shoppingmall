@@ -1,16 +1,13 @@
-package junwoo.shoppingmall.dto.entity;
+package junwoo.shoppingmall.entity;
 
 import groovy.util.logging.Slf4j;
 import jakarta.persistence.*;
 import junwoo.shoppingmall.dto.ProductDTO;
-import junwoo.shoppingmall.dto.ProductImageDTO;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Entity
 @Builder
@@ -33,6 +30,8 @@ public class Product {
     private int price;
 
     private int stockQuantity;
+
+    private String storedFilename;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<ProductImage> productImageList = new ArrayList<>();
@@ -59,6 +58,17 @@ public class Product {
         product.setStockQuantity(dto.getStockQuantity());
         product.setFileAttached(1); // 파일 있음.
         return product;
+    }
+
+    public void addStock(int quantity) {
+        this.stockQuantity += quantity;
+    }
+
+
+    public void removeStock(int quantity) {
+        int restStock = this.stockQuantity - quantity;
+
+        this.stockQuantity = restStock;
     }
 
 

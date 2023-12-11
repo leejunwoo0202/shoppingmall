@@ -2,22 +2,20 @@ package junwoo.shoppingmall.controller;
 
 
 import junwoo.shoppingmall.dto.ProductDTO;
-import junwoo.shoppingmall.dto.entity.Product;
+import junwoo.shoppingmall.entity.Product;
 import junwoo.shoppingmall.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +25,7 @@ public class ProductController {
 
     private final ProductService productService;
 
-    public static String UPLOAD_DIRECTORY = "C:/images";
+    public String UPLOAD_DIRECTORY = "C:/images";
 
     @GetMapping("/products/new")
     public String createForm(Model model)
@@ -58,6 +56,29 @@ public class ProductController {
         }
         model.addAttribute("products", productDTOs);
         return "/product/list";
+    }
+
+    @GetMapping("/paging")
+    public String paging(@PageableDefault(page = 1) Pageable pageable, Model model) {
+
+        Page<ProductDTO> productList = productService.paging(pageable);
+        int blockLimit = 3;
+        int startPage = (((int)(Math.ceil((double)pageable.getPageNumber() / blockLimit))) - 1) * blockLimit + 1; // 1 4 7 10 ~~
+        int endPage = ((startPage + blockLimit - 1) < productList.getTotalPages()) ? startPage + blockLimit - 1 : productList.getTotalPages();
+
+        // page 갯수 20개
+        // 현재 사용자가 3페이지
+        // 1 2 3
+        // 현재 사용자가 7페이지
+        // 7 8 9
+        // 보여지는 페이지 갯수 3개
+        // 총 페이지 갯수 8개
+
+        model.addAttribute("productList", productList);
+        model.addAttribute("startPage", startPage);
+        model.addAttribute("endPage", endPage);
+        return "/product/paging";
+
     }
 
 

@@ -1,4 +1,4 @@
-package junwoo.shoppingmall.dto.entity;
+package junwoo.shoppingmall.entity;
 
 import lombok.*;
 

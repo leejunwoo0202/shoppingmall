@@ -3,15 +3,12 @@ package junwoo.shoppingmall.dto;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import junwoo.shoppingmall.dto.entity.Product;
-import junwoo.shoppingmall.dto.entity.ProductImage;
+import junwoo.shoppingmall.entity.Product;
+import junwoo.shoppingmall.entity.ProductImage;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 
 @Data
 @AllArgsConstructor

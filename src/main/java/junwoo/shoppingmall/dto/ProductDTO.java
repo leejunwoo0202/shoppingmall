@@ -1,9 +1,6 @@
 package junwoo.shoppingmall.dto;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import junwoo.shoppingmall.dto.entity.Product;
+import junwoo.shoppingmall.entity.Product;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -43,6 +40,16 @@ public class ProductDTO {
         this.stockQuantity = stockQuantity;
 
     }
+
+    public ProductDTO(String name, int price, int stockQuantity, String storedFileName ) {
+        this.name = name;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+        this.storedFileName = storedFileName;
+
+    }
+
+
 
     public static ProductDTO toProductDTO(Product product) {
         ProductDTO productDTO = new ProductDTO();

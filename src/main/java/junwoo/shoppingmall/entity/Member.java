@@ -1,8 +1,12 @@
-package junwoo.shoppingmall.dto.entity;
+package junwoo.shoppingmall.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import junwoo.shoppingmall.dto.MemberDTO;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -17,10 +21,15 @@ public class Member {
     private long id;
 
     private long age;
+
     private String name;
 
     @Embedded
     private Address address;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();
 
     public Member toEntity(MemberDTO dto)
     {
