@@ -58,7 +58,7 @@ public class ProductController {
         return "/product/list";
     }
 
-    @GetMapping("/paging")
+    @GetMapping("/product/paging")
     public String paging(@PageableDefault(page = 1) Pageable pageable, Model model) {
 
         Page<ProductDTO> productList = productService.paging(pageable);
@@ -66,13 +66,6 @@ public class ProductController {
         int startPage = (((int)(Math.ceil((double)pageable.getPageNumber() / blockLimit))) - 1) * blockLimit + 1; // 1 4 7 10 ~~
         int endPage = ((startPage + blockLimit - 1) < productList.getTotalPages()) ? startPage + blockLimit - 1 : productList.getTotalPages();
 
-        // page 갯수 20개
-        // 현재 사용자가 3페이지
-        // 1 2 3
-        // 현재 사용자가 7페이지
-        // 7 8 9
-        // 보여지는 페이지 갯수 3개
-        // 총 페이지 갯수 8개
 
         model.addAttribute("productList", productList);
         model.addAttribute("startPage", startPage);

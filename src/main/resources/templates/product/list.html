@@ -30,9 +30,7 @@
                 <td th:if="${product.fileAttached == 1}">
                    <img th:src="@{|/upload/${product.storedFileName}|}" alt=""></td>
 
-                <td>
-                    <a href="#" th:href="@{/products/{id}/edit (id=${product.id})}" class="btn btn-primary" role="button">수정</a>
-                </td>
+
             </tr>
             </tbody>
         </table>
