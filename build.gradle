@@ -21,7 +21,9 @@ repositories {
 	mavenCentral()
 }
 
-
+jar {
+	enabled = false
+}
 
 
 
@@ -36,6 +38,7 @@ dependencies {
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-maven-plugin', version: '3.1.5'
 
 
 	implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '3.1.0'
