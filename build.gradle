@@ -21,15 +21,7 @@ repositories {
 	mavenCentral()
 }
 
-apply plugin: 'java'
 
-jar {
-	manifest {
-		attributes(
-				'Main-Class': 'junwoo.shoppingmall.ShoppingmallApplication' // 여기에 실제 메인 클래스 패키지 및 클래스 이름을 적어주세요
-		)
-	}
-}
 
 
 
