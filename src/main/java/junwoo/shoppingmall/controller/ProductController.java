@@ -31,7 +31,7 @@ public class ProductController {
     public String createForm(Model model)
     {
         model.addAttribute("form", new ProductForm());
-        return "/product/createProductForm";
+        return "product/createProductForm";
     }
 
     @PostMapping("/products/new")
@@ -55,7 +55,7 @@ public class ProductController {
             productDTOs.add(ProductDTO.toProductDTO(product));
         }
         model.addAttribute("products", productDTOs);
-        return "/product/list";
+        return "product/list";
     }
 
     @GetMapping("/product/paging")
@@ -70,7 +70,7 @@ public class ProductController {
         model.addAttribute("productList", productList);
         model.addAttribute("startPage", startPage);
         model.addAttribute("endPage", endPage);
-        return "/product/paging";
+        return "product/paging";
 
     }
 

@@ -96,7 +96,13 @@ public class ProductService {
             MultipartFile productFile = dto.getMultipartFile();
             String originalFileName = productFile.getOriginalFilename();
             String storedFileName = System.currentTimeMillis() + "_" + originalFileName;
-            String savePath = "C:/springboot_img/" + storedFileName;
+            // 개발환경 경로
+            //String savePath = "C:/springboot_img/" + storedFileName;
+
+            // 배포환경 경로
+            String savePath = "/home/ec2-user/springboot_img/" + storedFileName;
+
+
             productFile.transferTo(new File(savePath));
             Product productEntity = Product.toSaveFileEntity(dto);
             Long savedId = productRepository.save(productEntity).getId();
