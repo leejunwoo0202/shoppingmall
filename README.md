@@ -1,5 +1,7 @@
-![image](https://github.com/leejunwoo0202/shoppingmall/assets/70324099/178597f6-dcfb-44bc-b13b-ec0534927636)프로젝트이름 : 제이쇼핑몰
+프로젝트이름 : 제이쇼핑몰
+
 이미지 : 
+
 1. 메인화면
 ![image](https://github.com/leejunwoo0202/shoppingmall/assets/70324099/3acc8183-9b5e-4415-98f7-315a97ad3980)
 
