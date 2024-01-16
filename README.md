@@ -1,4 +1,4 @@
-프로젝트이름 : 제이쇼핑몰
+프로젝트 이름 : 제이쇼핑몰
 
 메인화면
 
@@ -24,6 +24,12 @@
 ![image](https://github.com/leejunwoo0202/shoppingmall/assets/70324099/5a8d25ed-653e-40eb-97bd-80f736f8c25d)
 
 
-목표 : 
-기술 스택 :
+
+기술 스택
+Language: Java 17
+Framework: Spring boot3
+Database: mysql
+ORM: Spring data jpa
+Deploy: Aws ec2
+
 아키텍처 : 
