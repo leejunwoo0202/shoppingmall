@@ -8,11 +8,11 @@
 
 2. 회원가입
  
-![image](https://github.com/leejunwoo0202/shoppingmall/assets/70324099/121495de-3aae-4660-8ace-b7841e12b125)
+![image](https://github.com/leejunwoo0202/shoppingmall/assets/70324099/121495de-3aae-4660-8ace-b7841e12b125) ![image](https://github.com/leejunwoo0202/shoppingmall/assets/70324099/994b1afb-b5be-45fd-b897-2052eaa7d590)
 
 회원목록
 
-![image](https://github.com/leejunwoo0202/shoppingmall/assets/70324099/994b1afb-b5be-45fd-b897-2052eaa7d590)
+
 
 3. 상품
 
