@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=wave&color=black&height=20&section=header&text=&fontSize=20" />
+
 프로젝트 이름 : 제이쇼핑몰
 <br/>
 메인화면
