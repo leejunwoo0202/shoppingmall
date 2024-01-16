@@ -26,10 +26,13 @@
 
 
 기술 스택
-Language: Java 17
-Framework: Spring boot3
-Database: mysql
-ORM: Spring data jpa
-Deploy: Aws ec2
+Language: Java 17<br/>
+Framework: Spring boot3<br/>
+Database: mysql<br/>
+ORM: Spring data jpa<br/>
+Deploy: Aws ec2<br/>
 
-아키텍처 : 
+아키텍처 
+<br/>
+![image](https://github.com/leejunwoo0202/shoppingmall/assets/70324099/ce7066a7-70ee-4816-a11c-31cf6273ca70)
+
