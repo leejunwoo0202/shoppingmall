@@ -1,4 +1,6 @@
-
+<div align=center>
+![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=capsule%20render&fontSize=90)
+<br/><br/>
 프로젝트 이름 : 제이쇼핑몰
 <br/><br/>
 메인화면
@@ -37,4 +39,5 @@ Deploy: Aws ec2<br/>
 아키텍처 
 <br/><br/>
 ![image](https://github.com/leejunwoo0202/shoppingmall/assets/70324099/ce7066a7-70ee-4816-a11c-31cf6273ca70)
+</div>
 
